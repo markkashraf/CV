@@ -1,142 +1,108 @@
-\documentclass{resume} 
-\usepackage{blindtext}
-\usepackage{hyperref}
-\hypersetup{
-    colorlinks=false,
-    linkcolor=black
-    }
-    
-\urlstyle{same}
-\usepackage[left=0.75in,top=0.6in,right=0.75in,bottom=0.6in]{geometry} % Document margins
-\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}}
-\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
-\name{Mark Ashraf William} % Your name
-\address{Cairo, Egypt} 
-\address{(+20) 01220674770 \\ mark2001rko2001@gmail.com \\ \href{https://github.com/markkashraf}{GitHub}}
-
-
-
-\begin{document}
-
-
-\begin{rSection}{Education}
-
-{\bf Faculty of Engineering Ain Shams University} \hfill {\em July 2019 - Present} 
-\\ Senior Undergraduate 
-\\ Computer and Systems Engineering
-
-
-\end{rSection}
-
-
-\begin{rSection}{Technical Strengths}
-
-\begin{tabular}{ @{} >{\bfseries}l @{\hspace{1ex}} l }
-Computer Languages &  C, Embedded C, C++, ARM Assembly, Python, Java, MATLAB, makefile. \\
-Tools & Simulink, Linux, GDB, make, CMake, Qemu, OpenOCD, Git, Protous \\
-Communication Protocols  & CAN, UART, SCI, I2C \\
-Other Skills &  Image Processing, Software Testing, OOP, Contol Systems.
-
-\end{tabular}
-
-\end{rSection}
-
-
-\begin{rSection}{Projects}
-
-\begin{rSubsection}{Digital Twin of Matgr DB4 Golf Car}{}{Sponsored By CyTwin Labs}{}
-Breif: Digital Representation/Control of the Physical Car inside Carla Simulator. The Physical Car is controlled by an F28379D board and an Arduino. Our objective was to add means of communication between the car and the Computer by adding Ethernet, Wifi and Cloud Support using an ESP32 that is connected to the F28379D Through CAN.
-\item Added CAN Protocol for the external mircocontroller that controls steering and speed to the code generated from SimuLink.
-\item Enhanced the SimuLink Model of the Loopback controller that controls steering. 
-\item Integrated the internal CAN bus of the car with the external CAN Bus (that controls speed and steering).
-
-\end{rSubsection}
-
-
-\begin{rSubsection}{Window Control System}{}{using FreeRTOS}{}
-The system includes features such as manual open/close, one-touch auto open/close, window lock, and jam protection. It utilizes top and bottom limit switches, a DC motor, push buttons for operation, and an ON/OFF switch for window lock. The project utilizes FreeRTOS functionalities like queues, mutex, semaphores.
-\end{rSubsection}
-
-
-\begin{rSubsection}{STM32 Drivers}{}{}{}
-I wrote drivers for the STM32F103C6 board for GPIO, UART, SPI, I2C,CAN. These drivers are complete with APIs that does basic functions to send/receive/initialize/config.
-\end{rSubsection}
-
-\begin{rSubsection}{Microwave Controller System}{}{on Tiva C}{}
-This project was in the embedded systems course where me and my colleagues worked on together on a TM4C123 board using Embedded C to build a Microwave oven controller that has functions like a timer for different modes and creating a custom timer and a safety lock.
-
-In this project, I wrote the driver for the LCD screen, and I wrote the timer function that was used to start a timer on the screen.
-\\ \\
-\end{rSubsection}
-
-
-\begin{rSubsection}{Return Rover from Mars}{}{using OpenCV, NumPy, SocketIO}{}
-control a mars rover that collects certain rocks from mars with high fidelity and path coverage. The footage was generated in a unity game where rocks spawned in random places in the terrain. I wrote the code for debugging mode where it shows the pipeline of the transformation process for the image in each stage (warping, applying thresholds and choosing the path), and I also contributed to the code for scaling the rover vision to world coordinates.
-\end{rSubsection}
-
-
-\begin{rSubsection}{Gobblet Game with AI}{}{using PyGame and C++}{}
-Gobblet is game that is played on a 4x4 board, and each player has 12 pieces of varying sizes. The goal is to line up four of your pieces in a row horizontally, vertically, or diagonally.
-
-The game contains multiple modes like Single-player vs Computer, Multiplayer on LAN or on the same computer, Computer vs Computer. The game has multiple difficulties for single player modes.
-\end{rSubsection}
-
-
-
-\begin{rSubsection}{Process Scheduler Visualizer}{}{using Java FX}{}
-This project creates and visualizes (live and static) several process scheduling techniques like First Come First Serve, Shortest Job First, Round Robin, and using priorities and showing info like waiting time and turnaround time. I worked on creating the UI, creating processes, and visualizing them on the screen, and contributed to creation of FCFS, SJF.
-\end{rSubsection}
-
-
-
-\begin{rSubsection}{XML Toolset}{}{using C++ and Qt}{}
-a C++ app that does operations like converting XML to JSON, Compression, prettifying and error detection/correction. I worked on the compression/decompression of the XML/JSON files.
-\end{rSubsection}
-
-
-\begin{rSubsection}{Tiny Language Compiler}{}{using tkinter and GraphViz library}{}
-This projects consists of a scanner and a parser for the tiny language, the tokens are generated and visualized.
-\end{rSubsection}
-
-
-\begin{rSubsection}{AES/RSA/Triple DES Encryption/Decryption}{}{using Python tkinter and Cryptography library}{}
-We used cryptography APIs to utilize multiple encryption/decryption techniques and created a GUI interface to use it using Tkinter.
-\end{rSubsection}
-
-
-\begin{rSubsection}{GPA Calculator Testing Suite}{}{using JUint in Java}{}
-a test suite for a GPA calculation that covers multiple functional tests like unit tests, integration tests and system tests.
-\\ \\ \\ \\ \\ \\ \\ \\ \\ \\
-\end{rSubsection} 
-\end{rSection}
+\ProvidesClass{resume}[2010/07/10 v0.9 Resume class]
+\LoadClass[11pt,letterpaper]{article} % Font size and paper type
+\usepackage[parfill]{parskip} % Remove paragraph indentation
+\usepackage{array} % Required for boldface (\bf and \bfseries) tabular columns
+\usepackage{ifthen} % Required for ifthenelse statements
+\pagestyle{empty} % Suppress page numbers
 
 %----------------------------------------------------------------------------------------
-\begin{rSection}{Relevant Courses}
-\itab{\textbf{Mastering Embedded Systems Diploma}} \tab{}  \tab{\textbf{Other Courses}}
-\\ \itab{   - C Programming} \tab{}  \tab{Android Nanodegree - Udacity}
-\\ \itab{   - Embedded C} \tab{}  \tab{Machine Learning - Coursera} 
-\\ \itab{   - UML Diagrams} \tab{}  \tab{CS50} 
-\\ \itab{   - Micro-controller Architecture} \tab{} \tab{Data Structures and Algorithms - Coursera}
-\\ \itab{   - Interfacing} \tab{} 
-\\ \itab{   - Embedded Protocols} \tab{} 
-\\ \itab{   - Testing} \tab{} 
-\\ \itab{   - ARM Assembly} \tab{} 
-\\ \itab{   - RTOS} \tab{} 
+%	HEADINGS COMMANDS: Commands for printing name and address
+%----------------------------------------------------------------------------------------
 
+\def \name#1{\def\@name{#1}} % Defines the \name command to set name
+\def \@name {} % Sets \@name to empty by default
 
-\end{rSection}
+\def \addressSep {$\diamond$} % Set default address separator to a diamond
+
+% One, two or three address lines can be specified 
+\let \@addressone \relax
+\let \@addresstwo \relax
+\let \@addressthree \relax
+
+% \address command can be used to set the first, second, and third address (last 2 optional)
+\def \address #1{
+  \@ifundefined{@addresstwo}{
+    \def \@addresstwo {#1}
+  }{
+  \@ifundefined{@addressthree}{
+  \def \@addressthree {#1}
+  }{
+     \def \@addressone {#1}
+  }}
+}
+
+% \printaddress is used to style an address line (given as input)
+\def \printaddress #1{
+  \begingroup
+    \def \\ {\addressSep\ }
+    \centerline{#1}
+  \endgroup
+  \par
+  \addressskip
+}
+
+% \printname is used to print the name as a page header
+\def \printname {
+  \begingroup
+    \hfil{\MakeUppercase{\namesize\bf \@name}}\hfil
+    \nameskip\break
+  \endgroup
+}
 
 %----------------------------------------------------------------------------------------
-\begin{rSection}{Awards} {\textbf{ACPC}}{ \\ \textit{June 2023}}{} \itemsep -3pt
-Managed to solve 3 questions out of 5.
-\end{rSection}
+%	PRINT THE HEADING LINES
+%----------------------------------------------------------------------------------------
 
+\let\ori@document=\document
+\renewcommand{\document}{
+  \ori@document  % Begin document
+  \printname % Print the name specified with \name
+  \@ifundefined{@addressone}{}{ % Print the first address if specified
+    \printaddress{\@addressone}}
+  \@ifundefined{@addresstwo}{}{ % Print the second address if specified
+    \printaddress{\@addresstwo}}
+     \@ifundefined{@addressthree}{}{ % Print the third address if specified
+    \printaddress{\@addressthree}}
+}
 
 %----------------------------------------------------------------------------------------
-\begin{rSection}{Volunteering} {\textbf{UNHCR Volunteer - 6th of October}}{ \\ \textit{July 2023}}{} \itemsep -3pt
-\\
-I support case workers by providing refugees with essential information, guiding them through procedures, and ensuring their comfort and safety within the UNHCR premises. My dedication to supporting those seeking refuge contributed to the mission of UNHCR, helping to restore hope and stability to vulnerable populations in Egypt.
+%	SECTION FORMATTING
+%----------------------------------------------------------------------------------------
 
-\end{rSection}
+% Defines the rSection environment for the large sections within the CV
+\newenvironment{rSection}[1]{ % 1 input argument - section name
+  \sectionskip
+  \MakeUppercase{\bf #1} % Section title
+  \sectionlineskip
+  \hrule % Horizontal line
+  \begin{list}{}{ % List for each individual item in the section
+    \setlength{\leftmargin}{1.5em} % Margin within the section
+  }
+  \item[]
+}{
+  \end{list}
+}
 
-\end{document}
+%----------------------------------------------------------------------------------------
+%	WORK EXPERIENCE FORMATTING
+%----------------------------------------------------------------------------------------
+
+\newenvironment{rSubsection}[4]{ % 4 input arguments - company name, year(s) employed, job title and location
+ {\bf #1} \hfill {#2} % Bold company name and date on the right
+ \ifthenelse{\equal{#3}{}}{}{ % If the third argument is not specified, don't print the job title and location line
+  \\
+  {\em #3} \hfill {\em #4} % Italic job title and location
+  }\smallskip
+  \begin{list}{$\cdot$}{\leftmargin=0em} % \cdot used for bullets, no indentation
+   \itemsep -0.5em \vspace{-0.5em} % Compress items in list together for aesthetics
+  }{
+  \end{list}
+  \vspace{0.5em} % Some space after the list of bullet points
+}
+
+% The below commands define the whitespace after certain things in the document - they can be \smallskip, \medskip or \bigskip
+\def\namesize{\huge} % Size of the name at the top of the document
+\def\addressskip{\smallskip} % The space between the two address (or phone/email) lines
+\def\sectionlineskip{\medskip} % The space above the horizontal line for each section 
+\def\nameskip{\bigskip} % The space after your name at the top
+\def\sectionskip{\medskip} % The space after the heading section
